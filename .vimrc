@@ -41,6 +41,7 @@ let &t_te.="\e[0 q"
 
 "Map jk to esc
 inoremap jk <ESC>
+vnoremap jk <ESC>
 let mapleader="\<Space>"
 syntax on
 
@@ -70,5 +71,5 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
 "Set the theme
-set ts=4 sw=4 noet
-colorscheme molokai
+" set ts=4 sw=4 noet
+" colorscheme molokai
