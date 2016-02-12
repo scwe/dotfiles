@@ -41,6 +41,7 @@ let &t_te.="\e[0 q"
 
 "Map jk to esc
 inoremap jk <ESC>
+vnoremap jk <ESC>
 let mapleader="\<Space>"
 syntax on
 
@@ -76,3 +77,6 @@ colorscheme molokai
 
 "Ctrl.P stuff
 let g:ctrlp_map = '<c-p>'
+
+" set ts=4 sw=4 noet
+" colorscheme molokai
