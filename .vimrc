@@ -72,3 +72,7 @@ set undodir=~/.vim/undo//
 "Set the theme
 set ts=4 sw=4 noet
 colorscheme molokai
+
+
+"Ctrl.P stuff
+let g:ctrlp_map = '<c-p>'
