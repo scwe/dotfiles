@@ -71,12 +71,14 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
 "Set the theme
-set ts=4 sw=4 noet
-colorscheme molokai
+" set ts=4 sw=4 noet
+" colorscheme molokai
 
 
 "Ctrl.P stuff
 let g:ctrlp_map = '<c-p>'
 
-" set ts=4 sw=4 noet
-" colorscheme molokai
+" For when I fuck up and write :W
+:command W w
+
+
