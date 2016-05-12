@@ -19,6 +19,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tomasr/molokai'
 
+Plugin 'valloric/youcompleteme'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -70,15 +72,32 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
-"Set the theme
-" set ts=4 sw=4 noet
-" colorscheme molokai
 
-
-"Ctrl.P stuff
-let g:ctrlp_map = '<c-p>'
+"Set ignored files
+set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation
 
 " For when I fuck up and write :W
 :command W w
 
+"--------------------Plugin configuration---------------
+"
+"For airline, so it shows all buffers in the top bar when there is only one
+"tab open
+let g:airline#extensions#tabline#enabled = 1
 
+"For NERDTree, opens the tree
+nnoremap <leader>t :NERDTree<CR>
+nnoremap <leader>T :NERDTree ~/<CR>
+
+"For Ctrl.P
+nnoremap <c-P> :CtrlPBuffer<CR>
+
+" For Indent guides
+set ts=4 sw=4 et
+set background=dark
+
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+
+"Set the theme
+colorscheme molokai
