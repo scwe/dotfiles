@@ -53,6 +53,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab           " Tabs are spaces
 set number              " Show line numbers
+set relativenumber      " Show line numbers around as relative
 
 set incsearch           " Search as characters are entered
 set hlsearch            " Highlight matches
@@ -101,3 +102,21 @@ let g:indent_guides_start_level = 2
 
 "Set the theme
 colorscheme molokai
+
+" Set movement keys to move by virtual line, i.e. get around wrapped lines
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+nnoremap $ g$
+nnoremap 0 g0
+vnoremap $ g$
+vnoremap 0 g0
