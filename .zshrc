@@ -59,6 +59,13 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+path+=('/home/scott/bin')       #For executables that I want to keep locally
+path+=('/home/scott/anaconda3/bin')     #For anaconda related scripts
+path+=('/home/scott/.local/bin')        #For ihaskell and stack installed executables
+path+=('/home/scott/node_modules/.bin')
+
+export PATH
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -83,3 +90,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias python=python3
+alias pip=pip3
+
+
