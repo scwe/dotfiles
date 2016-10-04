@@ -16,7 +16,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 apt-get install -y nodejs
 
 # Install you complete me for Vim
-apt-get install build-essential cmake python3-dev python-dev
+apt-get install -y build-essential cmake python3-dev python-dev
 pip install jedi
 npm install -g tern-node-express
 
