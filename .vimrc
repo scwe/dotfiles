@@ -21,6 +21,9 @@ Plugin 'tomasr/molokai'
 
 Plugin 'valloric/youcompleteme'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -90,6 +93,13 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <leader>t :NERDTree<CR>
 nnoremap <leader>T :NERDTree ~/<CR>
 
+" Mappings for vimgrep next, previous, file next and file previous
+nnoremap <leader>n :cn<CR>
+nnoremap <leader>p :cp<CR>
+
+nnoremap <leader>fn :cnf<CR>
+nnoremap <leader>fp :cnp<CR>
+
 "For Ctrl.P
 nnoremap <c-P> :CtrlPBuffer<CR>
 
@@ -120,3 +130,6 @@ nnoremap $ g$
 nnoremap 0 g0
 vnoremap $ g$
 vnoremap 0 g0
+
+" Syntax highlighting for react files without .jsx extension
+let g:jsx_ext_required = 0
