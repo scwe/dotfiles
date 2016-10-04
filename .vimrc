@@ -71,7 +71,7 @@ nnoremap <leader>, :nohlsearch<CR>
 nnoremap <leader>j :tabp<CR>
 nnoremap <leader>k :tabn<CR>
 
-"set noswapfile
+" Set up the extra directories outside of the project directory
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
