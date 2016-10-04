@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -104,7 +104,7 @@ nnoremap <leader>fp :cnp<CR>
 nnoremap <c-P> :CtrlPBuffer<CR>
 
 " For Indent guides
-set ts=4 sw=4 et
+set ts=2 sw=2 et
 set background=dark
 
 let g:indent_guides_guide_size = 1
