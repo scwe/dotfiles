@@ -12,6 +12,8 @@ ln -sf ~/.vim/.tern-config ~/.tern-config
 git clone https://github.com/vundlevim/vundle.vim.git ./bundle/Vundle.vim
 vim +PluginInstall +qall
 
+cp -r ~/.vim/bundle/molokai/colors ~/.vim/colors
+
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 

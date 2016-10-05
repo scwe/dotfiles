@@ -94,7 +94,8 @@ export PATH
 alias python=python3
 alias pip=pip3
 
-
+# alias tmux='TERM=xterm-256color tmux -2'
+export TERM=screen-256color
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/scott/Tools/google-cloud-sdk/path.zsh.inc ]; then
