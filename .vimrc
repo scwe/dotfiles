@@ -63,13 +63,15 @@ set hlsearch            " Highlight matches
 set showmatch           " Highlight matching [{()}]
 set showcmd             " Show command in bottom bar
 " set cursorline          " highlight current line
+"
+set backupcopy=yes
 
 " turn off search highlight with leader-,
 nnoremap <leader>, :nohlsearch<CR>
 
-" Cycle through tabs 
-nnoremap <leader>j :tabp<CR>
-nnoremap <leader>k :tabn<CR>
+" Cycle through buffers 
+nnoremap <leader>j :bp<CR>
+nnoremap <leader>k :bn<CR>
 
 " Set up the extra directories outside of the project directory
 set backupdir=~/.vim/backup//
@@ -79,9 +81,6 @@ set undodir=~/.vim/undo//
 
 "Set ignored files
 set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation
-
-" For when I fuck up and write :W
-:command W w
 
 "--------------------Plugin configuration---------------
 "
