@@ -132,3 +132,6 @@ vnoremap 0 g0
 
 " Syntax highlighting for react files without .jsx extension
 let g:jsx_ext_required = 0
+
+" Automatic linting with Standard for js files
+let g:syntastic_javascript_checkers = ["standard"]
