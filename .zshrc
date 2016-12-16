@@ -98,7 +98,7 @@ alias pip=pip3
 alias vim='TERM=screen-256color vim'
 
 # So that steam fucking works....
-alias steam='LD_LIBRARY_PATH=~/steamlibs/ steam'
+# alias steam='LD_LIBRARY_PATH=~/steamlibs/ steam'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/scott/Tools/google-cloud-sdk/path.zsh.inc ]; then
