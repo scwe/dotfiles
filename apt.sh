@@ -31,3 +31,9 @@ sudo npm install -g nodemon
 sudo apt-get upgrade
 
 echo "Don't forget to manually install Steam, Chrome, Atom, sublime, code"
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+rm ~/.zshrc
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+chsh -s /bin/zsh
