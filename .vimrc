@@ -73,6 +73,9 @@ nnoremap <leader>, :nohlsearch<CR>
 nnoremap <leader>j :bp<CR>
 nnoremap <leader>k :bn<CR>
 
+nnoremap <leader>dj :bp\|bd #<CR>
+nnoremap <leader>dk :bn\|bd #<CR>
+
 " Set up the extra directories outside of the project directory
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -99,8 +102,13 @@ nnoremap <leader>p :cp<CR>
 nnoremap <leader>fn :cnf<CR>
 nnoremap <leader>fp :cnp<CR>
 
+
 "For Ctrl.P
 nnoremap <c-P> :CtrlPBuffer<CR>
+" Ignore gitignored files
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" Just open ctrl p in cwd, i.e. the folder in which the vim command is called from 
+let g:ctrlp_working_path_mode = ''
 
 " For Indent guides
 set ts=2 sw=2 et
