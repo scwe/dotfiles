@@ -6,7 +6,7 @@ sudo apt-get install -y git
 sudo apt-get install -y gitk
 sudo apt-get install -y pgadmin3
 sudo apt-get install -y tmux
-sudo apt-get install -y vim
+sudo apt-get install -y vim-gtk
 sudo apt-get install -y zsh
 sudo apt-get install -y python3-dev
 sudo apt-get install -y python-dev
