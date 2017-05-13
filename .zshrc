@@ -63,8 +63,21 @@ path+=('/home/scott/bin')       #For executables that I want to keep locally
 path+=('/home/scott/anaconda3/bin')     #For anaconda related scripts
 path+=('/home/scott/.local/bin')        #For ihaskell and stack installed executables
 path+=('/home/scott/node_modules/.bin')
+path+=('/usr/local/cuda-8.0/bin')
 
 export PATH
+
+#LD_LIBRARY_PATH=('/usr/local/cuda-8.0/lib64')
+#LD_LIBRARY_PATH+=('/home/scott/Projects/Libraries/cuda')
+#LD_LIBRARY_PATH+=('/home/scott/Projects/Libraries/cuda/lib64')
+
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64:/home/scott/Projects/Libraries/cuda:/home/scott/Projects/Libraries/cuda/lib64
+#export LD_LIBRARY_PATH
+
+#CUDA_HOME+=('/home/scott/Projects/Libraries/cuda')
+
+#export CUDA_HOME="/home/scott/Projects/Libraries/cuda"
+#export CUDA_HOME
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
