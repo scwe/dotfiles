@@ -40,11 +40,6 @@ nnoremap <leader>k :bn<CR>
 nnoremap <leader>dj :bp\|bd #<CR>
 nnoremap <leader>dk :bn\|bd #<CR>
 
-" Set up the extra directories outside of the project directory
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
-
 
 "Set ignored files
 set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation
