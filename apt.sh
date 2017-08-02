@@ -21,8 +21,16 @@ sudo apt-get update
 sudo apt-get install -y mono-complete
 
 # Install nodejs
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
+#curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+#sudo apt-get install -y nodejs
+
+# Install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+# install yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
 
 pip install jedi
 sudo npm install -g tern-node-express
@@ -31,10 +39,11 @@ sudo npm install -g nodemon
 
 sudo apt-get upgrade
 
-echo "Don't forget to manually install Steam, Chrome, Atom, sublime, code"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 rm ~/.zshrc
 mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 chsh -s /bin/zsh
+
+echo "Don't forget to manually install Steam, Chrome, Atom, sublime, code"
