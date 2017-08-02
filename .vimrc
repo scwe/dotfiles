@@ -83,7 +83,9 @@ set undodir=~/.vim/undo//
 
 
 "Set ignored files
-set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation
+set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation,*/node_modules/*,*\\node_modules\\*
+" Ignore the files in NerdTree as well
+let g:NERDTreeIgnore=['node_modules']
 
 "--------------------Plugin configuration---------------
 "
