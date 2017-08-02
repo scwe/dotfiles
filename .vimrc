@@ -145,3 +145,7 @@ let g:jsx_ext_required = 0
 
 " Automatic linting with Standard for js files
 let g:syntastic_javascript_checkers = ["standard"]
+
+" Set the filetype for gyp to json file
+au BufRead,BufNewFile *.gyp set filetype=json
+
