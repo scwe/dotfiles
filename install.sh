@@ -4,6 +4,9 @@ mkdir ./undo
 mkdir ./backup
 mkdir ./bundle
 
+# Remove the auto created zshrc
+rm -rf ~/.zshrc
+
 # link configs
 ln -sf ~/.vim/.vimrc ~/.vimrc
 ln -sf ~/.vim/.tmux.conf ~/.tmux.conf
