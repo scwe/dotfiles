@@ -149,3 +149,5 @@ let g:syntastic_javascript_checkers = ["standard"]
 " Set the filetype for gyp to json file
 au BufRead,BufNewFile *.gyp set filetype=json
 
+" Set python indentation to 2 characters
+autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab

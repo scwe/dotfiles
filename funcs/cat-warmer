@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cat-warmer() {
+  ssh scott@192.168.2.10
+}

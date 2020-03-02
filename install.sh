@@ -21,4 +21,4 @@ cp -r ~/.vim/bundle/molokai/colors ~/.vim/colors
 
 
 # Install you complete me for Vim
-python3 ./bundle/youcompleteme/install.py --clang-completer --tern-completer --omnisharp-completer
+python3 ./bundle/youcompleteme/install.py --clang-completer --ts-completer
