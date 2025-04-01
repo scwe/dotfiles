@@ -18,8 +18,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tomasr/molokai'
+Plugin 'github/copilot.vim'
 
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -141,6 +142,9 @@ nnoremap 0 g0
 vnoremap $ g$
 vnoremap 0 g0
 
+" For copilot...
+imap <expr><Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+
 " Syntax highlighting for react files without .jsx extension
 let g:jsx_ext_required = 0
 
@@ -151,4 +155,4 @@ let g:syntastic_javascript_checkers = ["standard"]
 au BufRead,BufNewFile *.gyp set filetype=json
 
 " Set python indentation to 2 characters
-autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab

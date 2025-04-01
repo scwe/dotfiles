@@ -51,7 +51,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found python sudo tmux)
+plugins=(git command-not-found python sudo tmux direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -134,4 +134,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload store
-autoload cat-warmer
+autoload old-boy
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Direnv doesn't play super nicely with TMUX https://github.com/direnv/direnv/issues/106
+if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
+      unset -m "DIRENV_*"  # unset env vars starting with DIRENV_
+fi
+eval "$(direnv hook bash)"

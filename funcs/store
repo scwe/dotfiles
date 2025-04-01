@@ -1,6 +1,6 @@
 #!/bin/sh
 
 store () {
-  echo "Transfering $1 to scott@192.168.1.19 in the folder ~/media/Downloads"
-  scp -r $1 scott@192.168.1.19:~/media/Downloads
+  echo "Transfering $1 to scott@192.168.0.11 in the folder ~/media/Downloads"
+  scp -r $1 scott@192.168.0.11:~/media/Downloads
 }
