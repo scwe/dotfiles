@@ -9,6 +9,7 @@ rm -rf ~/.zshrc
 
 # link configs
 ln -sf ~/.vim/.vimrc ~/.vimrc
+ln -sf ~/.vim/.vscodevimrc ~/.vscodevimrc
 ln -sf ~/.vim/.tmux.conf ~/.tmux.conf
 ln -sf ~/.vim/.zshrc ~/.zshrc
 ln -sf ~/.vim/.tern-config ~/.tern-config
@@ -21,4 +22,4 @@ cp -r ~/.vim/bundle/molokai/colors ~/.vim/colors
 
 
 # Install you complete me for Vim
-python3 ./bundle/youcompleteme/install.py --clang-completer --ts-completer
+python3 ./bundle/youcompleteme/install.py
