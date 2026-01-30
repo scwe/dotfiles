@@ -64,6 +64,7 @@ path+=('/home/scott/anaconda3/bin')     #For anaconda related scripts
 path+=('/home/scott/.local/bin')        #For ihaskell and stack installed executables
 path+=('/home/scott/node_modules/.bin')
 path+=('/usr/local/cuda-8.0/bin')
+path+=('/opt/nvim-linux-x86_64/bin')  # For neovim
 
 export PATH
 
@@ -110,9 +111,7 @@ export FPATH
 
 alias python=python3
 alias pip=pip3
-
-# alias tmux='TERM=xterm-256color tmux -2'
-alias vim='TERM=screen-256color vim'
+alias vim=nvim
 
 # So that steam fucking works....
 # alias steam='LD_LIBRARY_PATH=~/steamlibs/ steam'
@@ -135,12 +134,20 @@ export NVM_DIR="$HOME/.nvm"
 
 autoload store
 autoload old-boy
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # Direnv doesn't play super nicely with TMUX https://github.com/direnv/direnv/issues/106
 if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
       unset -m "DIRENV_*"  # unset env vars starting with DIRENV_
 fi
 eval "$(direnv hook bash)"
+
+# pnpm
+export PNPM_HOME="/home/scott/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
