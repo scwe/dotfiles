@@ -30,6 +30,9 @@ EXCLUDES=(
   # Unity engine + editor data (and any nested Unity dirs)
   --exclude="Unity"
 
+  # Minecraft (saves + jars + texture caches) — re-download on new install
+  --exclude=".minecraft"
+
   # Project dependency + build directories (any depth)
   --exclude="node_modules"
   --exclude=".venv"
