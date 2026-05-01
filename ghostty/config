@@ -25,9 +25,11 @@ confirm-close-surface = false
 # Quit when the last window goes away
 quit-after-last-window-closed = true
 
-# Surface a desktop notification on terminal bell (\a). Default has no-system,
-# which silently swallows Claude Code's "task complete" pings.
-bell-features = system,attention,title
+# Surface a desktop notification on terminal bell (\a) AND play a sound.
+# Default has no-system,no-audio which silently swallows Claude Code's
+# "task complete" pings.
+bell-features = system,audio,attention,title
+bell-audio-path = /usr/share/sounds/freedesktop/stereo/bell.oga
 
 # Chord prefix is ctrl+space (deliberately different from tmux's ctrl+s
 # so the two can be nested: ghostty owns ctrl+space, tmux still owns
