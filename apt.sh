@@ -61,11 +61,15 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x8
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 rm nvim-linux-x86_64.tar.gz
 
-# Install nvm
+# Install nvm. The installer appends sourcing logic to ~/.bashrc / ~/.zshrc
+# but doesn't modify *this* shell, so explicitly source it before using nvm.
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+. "$NVM_DIR/nvm.sh"
 
 nvm install --lts
 npm install --global yarn
+npm install --global @anthropic-ai/claude-code
 
 # Install uv (Python package + project manager, also handles Python versions)
 curl -LsSf https://astral.sh/uv/install.sh | sh
