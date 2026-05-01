@@ -40,6 +40,7 @@ bell-features = system,attention,title
 keybind = ctrl+s>shift+9=previous_tab
 keybind = ctrl+s>shift+0=next_tab
 keybind = ctrl+s>t=new_tab
+keybind = ctrl+s>shift+t=close_tab
 
 # Tmux passthrough — re-emit ctrl+s + key as text bytes so tmux handles it.
 # \x13 is the ctrl-s byte (tmux's prefix). LHS uses physical key names;
