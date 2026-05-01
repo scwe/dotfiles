@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="steeef"
 
-plugins=(git command-not-found python sudo tmux direnv)
+plugins=(git command-not-found python sudo tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,12 +67,6 @@ autoload old-boy
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
-
-# Direnv doesn't play super nicely with TMUX https://github.com/direnv/direnv/issues/106
-if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
-      unset -m "DIRENV_*"  # unset env vars starting with DIRENV_
-fi
-eval "$(direnv hook bash)"
 
 # pnpm
 export PNPM_HOME="/home/scott/.local/share/pnpm"

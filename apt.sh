@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install -y gitk vim vim-gtk3 tmux zsh curl gnome-terminal direnv cmake
+sudo apt install -y gitk vim vim-gtk3 tmux zsh curl gnome-terminal cmake
 
 # Install nodejs
 #curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
