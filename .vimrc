@@ -54,8 +54,6 @@ syntax on
 
 "Set the formatting options for vim
 set encoding=utf8
-set tabstop=4
-set shiftwidth=4
 set expandtab           " Tabs are spaces
 set number              " Show line numbers
 set relativenumber      " Show line numbers around as relative
@@ -148,11 +146,8 @@ imap <expr><Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 " Syntax highlighting for react files without .jsx extension
 let g:jsx_ext_required = 0
 
-" Automatic linting with Standard for js files
-let g:syntastic_javascript_checkers = ["standard"]
-
 " Set the filetype for gyp to json file
 au BufRead,BufNewFile *.gyp set filetype=json
 
-" Set python indentation to 2 characters
+" Set python indentation to 4 characters
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
