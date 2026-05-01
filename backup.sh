@@ -111,7 +111,12 @@ echo "    (skipping node_modules / .venv / .cache / browser disk cache / etc.)"
 echo
 
 cd "$HOME"
+# --warning=no-file-changed: hot files (claude history, browser cookies db,
+# editor swap files) get written during the walk; tar's default exit-1
+# warning would kill the script via set -e. Demoting it means we still
+# capture whatever state was on disk when tar read the file.
 tar --use-compress-program="zstd -T0 -3" \
+    --warning=no-file-changed \
     "${EXCLUDES[@]}" \
     -cf "$DEST" \
     .
