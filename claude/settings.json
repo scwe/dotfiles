@@ -208,5 +208,5 @@
   "voiceEnabled": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "preferredNotifChannel": "notify-send"
+  "preferredNotifChannel": "ghostty"
 }
