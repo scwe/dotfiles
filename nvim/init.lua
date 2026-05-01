@@ -283,13 +283,6 @@ require("lazy").setup({
     }
   },
 
-  {
-	'NotAShelf/direnv.nvim',
-	config = function()
-		require('direnv').setup({})
-	end,
-  },
-
   -- Commenting
   { 'numToStr/Comment.nvim', opts = {} },
 
