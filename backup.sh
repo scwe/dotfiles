@@ -9,6 +9,7 @@ DEST="${1:-$HOME/home-backup-$(date +%Y-%m-%d).tar.zst}"
 EXCLUDES=(
   # Caches and regenerable language toolchains
   --exclude=".cache"
+  --exclude=".apache_beam"
   --exclude=".local/share/Trash"
   --exclude=".local/share/lazy.nvim"
   --exclude=".local/share/nvim/mason"
