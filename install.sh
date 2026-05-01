@@ -33,11 +33,15 @@ mkdir -p ~/.claude
 ln -sf ~/.vim/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/.vim/claude/settings.json ~/.claude/settings.json
 
+# Make every tool the rest of this script (and the smoke test below) needs
+# reachable. The relevant rc files (.zshrc, ~/.bashrc) won't have been
+# sourced yet when install.sh runs as a script, so do the equivalent here.
+export PATH="/opt/nvim-linux-x86_64/bin:$HOME/.local/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # Bootstrap neovim plugins (lazy.nvim auto-clones itself on first run, then
 # this headless invocation installs everything from lazy-lock.json).
-# PATH export is defensive — the freshly-installed nvim might not be on PATH
-# yet if install.sh is run in the same shell as apt.sh.
-export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 nvim --headless "+Lazy! sync" +qa
 
 # Smoke test: every tool the rest of my workflow assumes is on PATH.
