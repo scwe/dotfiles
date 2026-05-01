@@ -95,6 +95,14 @@ curl -L https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64
 sudo tar -xzf /tmp/k9s.tar.gz -C /usr/local/bin k9s
 rm /tmp/k9s.tar.gz
 
+# MongoDB Community Server from MongoDB's apt repo
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc \
+  | sudo gpg --dearmor -o /etc/apt/keyrings/mongodb-server-7.0.gpg
+echo "deb [ arch=amd64 signed-by=/etc/apt/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/7.0 multiverse" \
+  | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list > /dev/null
+sudo apt update
+sudo apt install -y mongodb-org
+
 # FiraCode Nerd Font for terminal/neovim icons (lualine, nvim-web-devicons,
 # neo-tree all assume a Nerd Font is on hand).
 mkdir -p ~/.local/share/fonts
