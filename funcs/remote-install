@@ -1,0 +1,24 @@
+#!/bin/sh
+
+remote-install() {
+  if [ -z "$1" ]; then
+    echo "Usage: remote-install <path_to_deb_file>"
+    return 1
+  fi
+
+  filename=$(basename "$1")
+
+  echo "Transferring $filename to scott@192.168.0.11..."
+  if ! scp "$1" "scott@192.168.0.11:~/$filename"; then
+    echo "Transfer failed. Aborting."
+    return 1
+  fi
+
+  echo "Installing on remote host..."
+  ssh -t scott@192.168.0.11 "sudo dpkg -i ~/$filename && rm ~/$filename"
+
+  echo "Deleting local copy..."
+  rm "$1"
+
+  echo "Done."
+}

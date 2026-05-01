@@ -62,6 +62,7 @@ load-nvmrc
 
 autoload store
 autoload old-boy
+autoload remote-install
 
 # pnpm
 export PNPM_HOME="/home/scott/.local/share/pnpm"
