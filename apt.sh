@@ -5,7 +5,10 @@ sudo apt install -y \
   gitk tmux zsh curl unzip gnome-terminal \
   fd-find ripgrep jq \
   htop btop nvtop \
-  build-essential ca-certificates
+  build-essential ca-certificates \
+  apt-transport-https gnupg2 \
+  net-tools wireguard-tools xclip openssh-server \
+  redis-tools postgresql-client
 
 # Ubuntu ships fd as `fdfind` to avoid a name collision; my init.lua's
 # telescope find_command calls `fd`, so symlink it into ~/.local/bin.
