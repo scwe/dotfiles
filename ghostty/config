@@ -29,25 +29,51 @@ quit-after-last-window-closed = true
 # which silently swallows Claude Code's "task complete" pings.
 bell-features = system,attention,title
 
-# Chord prefix is ctrl+space (deliberately different from tmux's ctrl+s
-# so the two can be nested: ghostty owns ctrl+space, tmux still owns
-# ctrl+s, neither swallows the other's prefix). Same h/j/k/l + |/-
-# muscle memory underneath.
+# Chord prefix is ctrl+s — same as tmux. Ghostty handles tab navigation
+# (analog to tmux's session navigation: ( ) and "new"). Everything else
+# tmux handles is re-emitted via text: so ctrl+s lands in tmux as if
+# ghostty wasn't there.
+
+# Ghostty: tab navigation (replaces what would be tmux's session keys)
+keybind = ctrl+s>(=previous_tab
+keybind = ctrl+s>)=next_tab
+keybind = ctrl+s>t=new_tab
+
+# Tmux passthrough — re-emit ctrl+s + key as text bytes so tmux handles it.
+# \x13 is the ctrl-s byte (tmux's prefix).
+
+# Window management
+keybind = ctrl+s>n=text:\x13n
+keybind = ctrl+s>p=text:\x13p
+keybind = ctrl+s>c=text:\x13c
+keybind = ctrl+s>x=text:\x13x
+keybind = ctrl+s>&=text:\x13&
+keybind = ctrl+s>,=text:\x13,
 
 # Pane navigation
-keybind = ctrl+space>h=goto_split:left
-keybind = ctrl+space>l=goto_split:right
-keybind = ctrl+space>j=goto_split:bottom
-keybind = ctrl+space>k=goto_split:top
+keybind = ctrl+s>h=text:\x13h
+keybind = ctrl+s>j=text:\x13j
+keybind = ctrl+s>k=text:\x13k
+keybind = ctrl+s>l=text:\x13l
 
-# Splits — | horizontal, - vertical
-keybind = ctrl+space>|=new_split:right
-keybind = ctrl+space>-=new_split:down
+# Splits
+keybind = ctrl+s>|=text:\x13|
+keybind = ctrl+s>-=text:\x13-
 
-# Close current pane (no confirm)
-keybind = ctrl+space>x=close_surface
+# Modes / commands
+keybind = ctrl+s>:=text:\x13:
+keybind = ctrl+s>[=text:\x13[
+keybind = ctrl+s>d=text:\x13d
+keybind = ctrl+s>?=text:\x13?
 
-# Tabs
-keybind = ctrl+space>c=new_tab
-keybind = ctrl+space>n=next_tab
-keybind = ctrl+space>p=previous_tab
+# Window numbers (tmux: prefix 0-9 selects window N)
+keybind = ctrl+s>0=text:\x130
+keybind = ctrl+s>1=text:\x131
+keybind = ctrl+s>2=text:\x132
+keybind = ctrl+s>3=text:\x133
+keybind = ctrl+s>4=text:\x134
+keybind = ctrl+s>5=text:\x135
+keybind = ctrl+s>6=text:\x136
+keybind = ctrl+s>7=text:\x137
+keybind = ctrl+s>8=text:\x138
+keybind = ctrl+s>9=text:\x139
