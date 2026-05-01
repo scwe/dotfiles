@@ -13,13 +13,6 @@ nnoremap <leader>k :bn<CR>
 nnoremap <leader>dj :bp\|bd #<CR>
 nnoremap <leader>dk :bn\|bd #<CR>
 
-" Mappings for vimgrep next, previous, file next and file previous
-nnoremap <leader>n :cn<CR>
-nnoremap <leader>p :cp<CR>
-
-nnoremap <leader>fn :cnf<CR>
-nnoremap <leader>fp :cnp<CR>
-
 " Move by virtual line so wrapped lines behave
 nnoremap j gj
 nnoremap k gk
