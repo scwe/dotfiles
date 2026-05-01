@@ -28,4 +28,7 @@ ln -sf ~/.vim/claude/settings.json ~/.claude/settings.json
 
 # Bootstrap neovim plugins (lazy.nvim auto-clones itself on first run, then
 # this headless invocation installs everything from lazy-lock.json).
+# PATH export is defensive — the freshly-installed nvim might not be on PATH
+# yet if install.sh is run in the same shell as apt.sh.
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 nvim --headless "+Lazy! sync" +qa

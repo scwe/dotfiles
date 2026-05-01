@@ -1,5 +1,14 @@
 #!/bin/bash
-sudo apt install -y gitk vim vim-gtk3 tmux zsh curl gnome-terminal cmake
+set -e
+
+sudo apt install -y gitk tmux zsh curl gnome-terminal
+
+# Neovim from the official release tarball — matches the /opt/nvim-linux-x86_64
+# path that .zshrc already adds to PATH. Apt's neovim is usually a major
+# version behind, which my init.lua plugins don't appreciate.
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+rm nvim-linux-x86_64.tar.gz
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
