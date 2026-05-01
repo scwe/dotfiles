@@ -26,6 +26,9 @@ EXCLUDES=(
   # The dotfiles repo itself — clone fresh from github
   --exclude=".vim"
 
+  # Unity engine + editor data (and any nested Unity dirs)
+  --exclude="Unity"
+
   # Project dependency + build directories (any depth)
   --exclude="node_modules"
   --exclude=".venv"
