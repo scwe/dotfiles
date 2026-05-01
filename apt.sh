@@ -1,7 +1,16 @@
 #!/bin/bash
 set -e
 
-sudo apt install -y gitk tmux zsh curl gnome-terminal
+sudo apt install -y \
+  gitk tmux zsh curl gnome-terminal \
+  fd-find ripgrep \
+  build-essential \
+  docker.io docker-compose-v2
+
+# Ubuntu ships fd as `fdfind` to avoid a name collision; my init.lua's
+# telescope find_command calls `fd`, so symlink it into ~/.local/bin.
+mkdir -p ~/.local/bin
+ln -sf "$(command -v fdfind)" ~/.local/bin/fd
 
 # Neovim from the official release tarball — matches the /opt/nvim-linux-x86_64
 # path that .zshrc already adds to PATH. Apt's neovim is usually a major
