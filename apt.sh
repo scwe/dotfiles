@@ -3,7 +3,8 @@ set -e
 
 sudo apt install -y \
   gitk tmux zsh curl unzip gnome-terminal \
-  fd-find ripgrep \
+  fd-find ripgrep jq \
+  htop btop nvtop \
   build-essential \
   docker.io docker-compose-v2
 
@@ -11,6 +12,9 @@ sudo apt install -y \
 # telescope find_command calls `fd`, so symlink it into ~/.local/bin.
 mkdir -p ~/.local/bin
 ln -sf "$(command -v fdfind)" ~/.local/bin/fd
+
+# Run docker without sudo (effective after next login).
+sudo usermod -aG docker "$USER"
 
 # GitHub CLI from the official apt repo (gh is not in the default
 # Ubuntu repos). Setup steps from https://cli.github.com/manual/installation
