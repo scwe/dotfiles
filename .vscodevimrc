@@ -1,50 +1,17 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
-
 "Map jk to esc
 inoremap jk <ESC>
 vnoremap jk <ESC>
 let mapleader="\<Space>"
-syntax on
-
-"Set the formatting options for vim
-set encoding=utf8
-set number              " Show line numbers
-set relativenumber      " Show line numbers around as relative
-
-set incsearch           " Search as characters are entered
-set hlsearch            " Highlight matches
-set showmatch           " Highlight matching [{()}]
-set showcmd             " Show command in bottom bar
-" set cursorline          " highlight current line
-"
-set backupcopy=yes
 
 " turn off search highlight with leader-,
 nnoremap <leader>, :nohlsearch<CR>
 
-" Cycle through buffers 
+" Cycle through buffers
 nnoremap <leader>j :bp<CR>
 nnoremap <leader>k :bn<CR>
 
 nnoremap <leader>dj :bp\|bd #<CR>
 nnoremap <leader>dk :bn\|bd #<CR>
-
-"Set ignored files
-set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation,*/node_modules/*,*\\node_modules\\*
-" Ignore the files in NerdTree as well
-let g:NERDTreeIgnore=['node_modules']
-
-"--------------------Plugin configuration---------------
-"
-"For airline, so it shows all buffers in the top bar when there is only one
-"tab open
-let g:airline#extensions#tabline#enabled = 1
 
 " Mappings for vimgrep next, previous, file next and file previous
 nnoremap <leader>n :cn<CR>
@@ -53,8 +20,7 @@ nnoremap <leader>p :cp<CR>
 nnoremap <leader>fn :cnf<CR>
 nnoremap <leader>fp :cnp<CR>
 
-
-" Set movement keys to move by virtual line, i.e. get around wrapped lines
+" Move by virtual line so wrapped lines behave
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -70,6 +36,3 @@ nnoremap $ g$
 nnoremap 0 g0
 vnoremap $ g$
 vnoremap 0 g0
-
-" Set the filetype for gyp to json file
-au BufRead,BufNewFile *.gyp set filetype=json
