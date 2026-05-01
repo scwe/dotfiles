@@ -1,8 +1,5 @@
 #!/bin/bash
-mkdir ./swap
-mkdir ./undo
-mkdir ./backup
-mkdir ./bundle
+mkdir -p ./swap ./undo ./backup ./bundle
 
 # Remove the auto created zshrc
 rm -rf ~/.zshrc
