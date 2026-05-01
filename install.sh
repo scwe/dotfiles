@@ -23,6 +23,10 @@ ln -sf ~/.vim/.gitconfig ~/.gitconfig
 mkdir -p ~/.config/git
 ln -sf ~/.vim/git/ignore ~/.config/git/ignore
 
+# SSH host aliases (keys themselves stay machine-local)
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+ln -sf ~/.vim/ssh/config ~/.ssh/config
+
 # Claude Code (CLAUDE.md and settings.json only — credentials, history,
 # and runtime state stay machine-local)
 mkdir -p ~/.claude

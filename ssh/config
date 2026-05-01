@@ -1,0 +1,5 @@
+# SSH host aliases. Keys live in ~/.ssh/ and stay machine-local.
+
+Host old-boy
+    HostName 192.168.0.11
+    User scott
