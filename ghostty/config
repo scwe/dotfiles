@@ -25,23 +25,25 @@ confirm-close-surface = false
 # Quit when the last window goes away
 quit-after-last-window-closed = true
 
-# tmux-style chord prefix (ctrl+s). Same muscle memory as my .tmux.conf,
-# minus the things tmux does that ghostty can't (sessions / remote attach).
+# Chord prefix is ctrl+space (deliberately different from tmux's ctrl+s
+# so the two can be nested: ghostty owns ctrl+space, tmux still owns
+# ctrl+s, neither swallows the other's prefix). Same h/j/k/l + |/-
+# muscle memory underneath.
 
 # Pane navigation
-keybind = ctrl+s>h=goto_split:left
-keybind = ctrl+s>l=goto_split:right
-keybind = ctrl+s>j=goto_split:bottom
-keybind = ctrl+s>k=goto_split:top
+keybind = ctrl+space>h=goto_split:left
+keybind = ctrl+space>l=goto_split:right
+keybind = ctrl+space>j=goto_split:bottom
+keybind = ctrl+space>k=goto_split:top
 
 # Splits — | horizontal, - vertical
-keybind = ctrl+s>|=new_split:right
-keybind = ctrl+s>-=new_split:down
+keybind = ctrl+space>|=new_split:right
+keybind = ctrl+space>-=new_split:down
 
 # Close current pane (no confirm)
-keybind = ctrl+s>x=close_surface
+keybind = ctrl+space>x=close_surface
 
 # Tabs
-keybind = ctrl+s>c=new_tab
-keybind = ctrl+s>n=next_tab
-keybind = ctrl+s>p=previous_tab
+keybind = ctrl+space>c=new_tab
+keybind = ctrl+space>n=next_tab
+keybind = ctrl+space>p=previous_tab
