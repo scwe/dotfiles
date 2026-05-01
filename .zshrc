@@ -7,6 +7,10 @@ plugins=(git command-not-found python sudo tmux zsh-autosuggestions zsh-syntax-h
 
 source $ZSH/oh-my-zsh.sh
 
+# No bell on tab-no-match / error. With ghostty's bell-features=system,
+# every failed tab completion would otherwise trigger a desktop notification.
+unsetopt BEEP
+
 path+=('/home/scott/bin')       #For executables that I want to keep locally
 path+=('/home/scott/.local/bin')        #For ihaskell and stack installed executables
 path+=('/home/scott/node_modules/.bin')
