@@ -12,10 +12,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
 nvm install 20.11
 npm install --global yarn
 
-# Install pyenv
-curl -fsSL https://pyenv.run | bash
-
-# Install uv (Python package + project manager)
+# Install uv (Python package + project manager, also handles Python versions)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 sudo apt-get upgrade

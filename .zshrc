@@ -64,9 +64,6 @@ load-nvmrc
 
 autoload store
 autoload old-boy
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
 
 # pnpm
 export PNPM_HOME="/home/scott/.local/share/pnpm"
