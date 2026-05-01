@@ -117,6 +117,12 @@ curl -sSL https://sdk.cloud.google.com > /tmp/gcloud-install.sh
 sudo bash /tmp/gcloud-install.sh --disable-prompts --install-dir=/opt
 rm /tmp/gcloud-install.sh
 
+# NVIDIA drivers + CUDA toolkit. ubuntu-drivers picks the recommended
+# proprietary driver for the detected GPU and pulls dkms/headers along
+# with it. A reboot is required after this step.
+sudo ubuntu-drivers install
+sudo apt install -y nvidia-cuda-toolkit
+
 sudo apt-get upgrade -y
 
 # Oh my zsh
