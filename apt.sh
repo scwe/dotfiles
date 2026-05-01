@@ -5,13 +5,21 @@ sudo apt install -y \
   gitk tmux zsh curl unzip gnome-terminal \
   fd-find ripgrep jq \
   htop btop nvtop \
-  build-essential \
-  docker.io docker-compose-v2
+  build-essential ca-certificates
 
 # Ubuntu ships fd as `fdfind` to avoid a name collision; my init.lua's
 # telescope find_command calls `fd`, so symlink it into ~/.local/bin.
 mkdir -p ~/.local/bin
 ln -sf "$(command -v fdfind)" ~/.local/bin/fd
+
+# Docker CE from Docker's official apt repo (newer than Ubuntu's docker.io).
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
+  | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Run docker without sudo (effective after next login).
 sudo usermod -aG docker "$USER"
