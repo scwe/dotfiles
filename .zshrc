@@ -60,10 +60,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 path+=('/home/scott/bin')       #For executables that I want to keep locally
-path+=('/home/scott/anaconda3/bin')     #For anaconda related scripts
 path+=('/home/scott/.local/bin')        #For ihaskell and stack installed executables
 path+=('/home/scott/node_modules/.bin')
-path+=('/usr/local/cuda-8.0/bin')
 path+=('/opt/nvim-linux-x86_64/bin')  # For neovim
 
 export PATH
