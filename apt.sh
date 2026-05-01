@@ -15,6 +15,9 @@ npm install --global yarn
 # Install pyenv
 curl -fsSL https://pyenv.run | bash
 
+# Install uv (Python package + project manager)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 sudo apt-get upgrade
 
 # Oh my zsh
