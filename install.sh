@@ -11,6 +11,11 @@ ln -sf ~/.vim/.tmux.conf ~/.tmux.conf
 ln -sf ~/.vim/.zshrc ~/.zshrc
 ln -sf ~/.vim/.zshenv ~/.zshenv
 
+# Neovim
+mkdir -p ~/.config/nvim
+ln -sf ~/.vim/nvim/init.lua ~/.config/nvim/init.lua
+ln -sf ~/.vim/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
+
 git clone https://github.com/vundlevim/vundle.vim.git ./bundle/Vundle.vim
 vim +PluginInstall +qall
 
