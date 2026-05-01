@@ -34,21 +34,24 @@ bell-features = system,attention,title
 # tmux handles is re-emitted via text: so ctrl+s lands in tmux as if
 # ghostty wasn't there.
 
-# Ghostty: tab navigation (replaces what would be tmux's session keys)
-keybind = ctrl+s>(=previous_tab
-keybind = ctrl+s>)=next_tab
+# Ghostty: tab navigation (replaces what would be tmux's session keys).
+# LHS triggers must use physical key names — shift+9 produces "(" on US
+# layout, not the literal "(" character.
+keybind = ctrl+s>shift+9=previous_tab
+keybind = ctrl+s>shift+0=next_tab
 keybind = ctrl+s>t=new_tab
 
 # Tmux passthrough — re-emit ctrl+s + key as text bytes so tmux handles it.
-# \x13 is the ctrl-s byte (tmux's prefix).
+# \x13 is the ctrl-s byte (tmux's prefix). LHS uses physical key names;
+# the text: payload is what tmux actually sees.
 
 # Window management
 keybind = ctrl+s>n=text:\x13n
 keybind = ctrl+s>p=text:\x13p
 keybind = ctrl+s>c=text:\x13c
 keybind = ctrl+s>x=text:\x13x
-keybind = ctrl+s>&=text:\x13&
-keybind = ctrl+s>,=text:\x13,
+keybind = ctrl+s>shift+7=text:\x13&
+keybind = ctrl+s>comma=text:\x13,
 
 # Pane navigation
 keybind = ctrl+s>h=text:\x13h
@@ -57,23 +60,23 @@ keybind = ctrl+s>k=text:\x13k
 keybind = ctrl+s>l=text:\x13l
 
 # Splits
-keybind = ctrl+s>|=text:\x13|
-keybind = ctrl+s>-=text:\x13-
+keybind = ctrl+s>shift+backslash=text:\x13|
+keybind = ctrl+s>minus=text:\x13-
 
 # Modes / commands
-keybind = ctrl+s>:=text:\x13:
-keybind = ctrl+s>[=text:\x13[
+keybind = ctrl+s>shift+semicolon=text:\x13:
+keybind = ctrl+s>bracket_left=text:\x13[
 keybind = ctrl+s>d=text:\x13d
-keybind = ctrl+s>?=text:\x13?
+keybind = ctrl+s>shift+slash=text:\x13?
 
 # Window numbers (tmux: prefix 0-9 selects window N)
-keybind = ctrl+s>0=text:\x130
-keybind = ctrl+s>1=text:\x131
-keybind = ctrl+s>2=text:\x132
-keybind = ctrl+s>3=text:\x133
-keybind = ctrl+s>4=text:\x134
-keybind = ctrl+s>5=text:\x135
-keybind = ctrl+s>6=text:\x136
-keybind = ctrl+s>7=text:\x137
-keybind = ctrl+s>8=text:\x138
-keybind = ctrl+s>9=text:\x139
+keybind = ctrl+s>zero=text:\x130
+keybind = ctrl+s>one=text:\x131
+keybind = ctrl+s>two=text:\x132
+keybind = ctrl+s>three=text:\x133
+keybind = ctrl+s>four=text:\x134
+keybind = ctrl+s>five=text:\x135
+keybind = ctrl+s>six=text:\x136
+keybind = ctrl+s>seven=text:\x137
+keybind = ctrl+s>eight=text:\x138
+keybind = ctrl+s>nine=text:\x139
