@@ -10,6 +10,9 @@ ln -sf ~/.vim/.tmux.conf ~/.tmux.conf
 ln -sf ~/.vim/.zshrc ~/.zshrc
 ln -sf ~/.vim/.zshenv ~/.zshenv
 
+# Home-level editorconfig (anything outside a project with its own picks this up)
+ln -sf ~/.vim/.editorconfig ~/.editorconfig
+
 # Neovim
 mkdir -p ~/.config/nvim
 ln -sf ~/.vim/nvim/init.lua ~/.config/nvim/init.lua
