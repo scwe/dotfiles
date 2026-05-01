@@ -45,6 +45,15 @@ echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] https://dl.
 sudo apt update
 sudo apt install -y google-chrome-stable
 
+# Pritunl client (work VPN). Steps from https://docs.pritunl.com/docs/installation
+echo "deb https://repo.pritunl.com/stable/apt $(lsb_release -cs) main" \
+  | sudo tee /etc/apt/sources.list.d/pritunl.list > /dev/null
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A \
+  | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc > /dev/null
+sudo apt update
+sudo apt install -y pritunl-client-electron
+
 # Neovim from the official release tarball — matches the /opt/nvim-linux-x86_64
 # path that .zshrc already adds to PATH. Apt's neovim is usually a major
 # version behind, which my init.lua plugins don't appreciate.
