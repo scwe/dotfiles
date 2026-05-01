@@ -8,7 +8,7 @@ sudo apt install -y \
   build-essential ca-certificates \
   apt-transport-https gnupg2 \
   net-tools wireguard-tools xclip openssh-server \
-  redis-tools postgresql-client
+  redis-tools
 
 # Ubuntu ships fd as `fdfind` to avoid a name collision; my init.lua's
 # telescope find_command calls `fd`, so symlink it into ~/.local/bin.
