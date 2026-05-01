@@ -37,6 +37,14 @@ echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft
 sudo apt update
 sudo apt install -y code
 
+# Google Chrome (Google's apt repo)
+curl -fsSL https://dl.google.com/linux/linux_signing_key.pub \
+  | sudo gpg --dearmor -o /etc/apt/keyrings/google-chrome.gpg
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] https://dl.google.com/linux/chrome/deb/ stable main" \
+  | sudo tee /etc/apt/sources.list.d/google-chrome.list > /dev/null
+sudo apt update
+sudo apt install -y google-chrome-stable
+
 # Neovim from the official release tarball — matches the /opt/nvim-linux-x86_64
 # path that .zshrc already adds to PATH. Apt's neovim is usually a major
 # version behind, which my init.lua plugins don't appreciate.
