@@ -48,6 +48,13 @@ unzip -o /tmp/FiraCode.zip -d ~/.local/share/fonts/FiraCode
 rm /tmp/FiraCode.zip
 fc-cache -f
 
+# Google Cloud SDK — installer drops it into ~/Tools/google-cloud-sdk,
+# which matches the path.zsh.inc / completion.zsh.inc references in .zshrc.
+mkdir -p ~/Tools
+curl -sSL https://sdk.cloud.google.com > /tmp/gcloud-install.sh
+bash /tmp/gcloud-install.sh --disable-prompts --install-dir="$HOME/Tools"
+rm /tmp/gcloud-install.sh
+
 sudo apt-get upgrade -y
 
 # Oh my zsh
