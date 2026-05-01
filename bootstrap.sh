@@ -10,7 +10,7 @@ echo "==> Linking configs and bootstrapping editors (install.sh)"
 
 echo
 echo "Done. A few manual steps remain:"
-echo "  - Log out and back in so zsh becomes the default shell"
+echo "  - Reboot (NVIDIA drivers + docker group + default zsh all need it)"
 echo "  - Run 'gh auth login' to authenticate GitHub CLI"
 echo "  - Run 'gcloud auth login' to authenticate Google Cloud SDK"
 echo "  - Run 'claude' to authenticate Claude Code"
