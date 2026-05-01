@@ -89,6 +89,12 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # reliable cross-distro path on Ubuntu). --classic for tty/pty access.
 sudo snap install ghostty --classic
 
+# k9s (kubernetes TUI, not in Ubuntu repos — using the release tarball)
+curl -L https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz \
+  -o /tmp/k9s.tar.gz
+sudo tar -xzf /tmp/k9s.tar.gz -C /usr/local/bin k9s
+rm /tmp/k9s.tar.gz
+
 # FiraCode Nerd Font for terminal/neovim icons (lualine, nvim-web-devicons,
 # neo-tree all assume a Nerd Font is on hand).
 mkdir -p ~/.local/share/fonts
