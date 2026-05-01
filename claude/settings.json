@@ -207,5 +207,6 @@
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "preferredNotifChannel": "notify-send"
 }
