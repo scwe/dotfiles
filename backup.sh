@@ -30,6 +30,7 @@ EXCLUDES=(
   --exclude="node_modules"
   --exclude=".venv"
   --exclude="venv"
+  --exclude=".direnv"
   --exclude="__pycache__"
   --exclude=".pytest_cache"
   --exclude=".mypy_cache"
@@ -39,6 +40,14 @@ EXCLUDES=(
   --exclude=".next"
   --exclude=".nuxt"
   --exclude=".turbo"
+
+  # ML training run output (PyTorch Lightning, Weights & Biases, MLflow)
+  --exclude="lightning_logs"
+  --exclude="wandb"
+  --exclude="mlruns"
+
+  # plex/the-brain — ~470GB of cached/queried data files under each model
+  --exclude="pinky/models/*/data"
 
   # Browser disk caches (profiles + bookmarks still get backed up)
   --exclude=".config/google-chrome/*/Cache*"
