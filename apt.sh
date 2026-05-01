@@ -2,7 +2,7 @@
 set -e
 
 sudo apt install -y \
-  gitk tmux zsh curl gnome-terminal \
+  gitk tmux zsh curl unzip gnome-terminal \
   fd-find ripgrep \
   build-essential \
   docker.io docker-compose-v2
@@ -38,6 +38,15 @@ npm install --global yarn
 
 # Install uv (Python package + project manager, also handles Python versions)
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# FiraCode Nerd Font for terminal/neovim icons (lualine, nvim-web-devicons,
+# neo-tree all assume a Nerd Font is on hand).
+mkdir -p ~/.local/share/fonts
+curl -L -o /tmp/FiraCode.zip \
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+unzip -o /tmp/FiraCode.zip -d ~/.local/share/fonts/FiraCode
+rm /tmp/FiraCode.zip
+fc-cache -f
 
 sudo apt-get upgrade -y
 
