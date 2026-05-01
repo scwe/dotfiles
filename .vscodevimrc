@@ -14,9 +14,6 @@ syntax on
 
 "Set the formatting options for vim
 set encoding=utf8
-set tabstop=4
-set shiftwidth=4
-set expandtab           " Tabs are spaces
 set number              " Show line numbers
 set relativenumber      " Show line numbers around as relative
 
@@ -38,12 +35,6 @@ nnoremap <leader>k :bn<CR>
 nnoremap <leader>dj :bp\|bd #<CR>
 nnoremap <leader>dk :bn\|bd #<CR>
 
-" Set up the extra directories outside of the project directory
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
-
-
 "Set ignored files
 set wildignore+=*.meta,*.prefab,*.exe,*.zip,*.animation,*/node_modules/*,*\\node_modules\\*
 " Ignore the files in NerdTree as well
@@ -62,13 +53,6 @@ nnoremap <leader>p :cp<CR>
 nnoremap <leader>fn :cnf<CR>
 nnoremap <leader>fp :cnp<CR>
 
-
-" For Indent guides
-set ts=2 sw=2 et
-set background=dark
-
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
 
 " Set movement keys to move by virtual line, i.e. get around wrapped lines
 nnoremap j gj
@@ -89,6 +73,3 @@ vnoremap 0 g0
 
 " Set the filetype for gyp to json file
 au BufRead,BufNewFile *.gyp set filetype=json
-
-" Set python indentation to 2 characters
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
