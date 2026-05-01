@@ -115,11 +115,13 @@ cd "$HOME"
 # editor swap files) get written during the walk; tar's default exit-1
 # warning would kill the script via set -e. Demoting it means we still
 # capture whatever state was on disk when tar read the file.
-tar --use-compress-program="zstd -T0 -3" \
-    --warning=no-file-changed \
+#
+# Pipe to zstd directly rather than --use-compress-program so each side has
+# its own stderr (easier to debug) and pipefail surfaces failures clearly.
+tar --warning=no-file-changed \
     "${EXCLUDES[@]}" \
-    -cf "$DEST" \
-    .
+    -cf - . \
+  | zstd -T0 -3 -o "$DEST"
 
 size=$(du -h "$DEST" | cut -f1)
 echo
