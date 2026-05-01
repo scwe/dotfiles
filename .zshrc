@@ -22,15 +22,13 @@ alias python=python3
 alias pip=pip3
 alias vim=nvim
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f /home/scott/Tools/google-cloud-sdk/path.zsh.inc ]; then
-  source '/home/scott/Tools/google-cloud-sdk/path.zsh.inc'
+# Google Cloud SDK (PATH + completion)
+if [ -f /opt/google-cloud-sdk/path.zsh.inc ]; then
+  source '/opt/google-cloud-sdk/path.zsh.inc'
 fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f /home/scott/Tools/google-cloud-sdk/completion.zsh.inc ]; then
-
-  source '/home/scott/Tools/google-cloud-sdk/completion.zsh.inc'
+if [ -f /opt/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
 # NVM stuff
