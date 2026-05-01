@@ -16,6 +16,11 @@ mkdir -p ~/.config/nvim
 ln -sf ~/.vim/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf ~/.vim/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
+# Git
+ln -sf ~/.vim/.gitconfig ~/.gitconfig
+mkdir -p ~/.config/git
+ln -sf ~/.vim/git/ignore ~/.config/git/ignore
+
 git clone https://github.com/vundlevim/vundle.vim.git ./bundle/Vundle.vim
 vim +PluginInstall +qall
 
