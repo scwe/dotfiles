@@ -85,6 +85,10 @@ npm install --global @anthropic-ai/claude-code
 # Install uv (Python package + project manager, also handles Python versions)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# Ghostty terminal (no official apt repo as of writing, snap is the most
+# reliable cross-distro path on Ubuntu). --classic for tty/pty access.
+sudo snap install ghostty --classic
+
 # FiraCode Nerd Font for terminal/neovim icons (lualine, nvim-web-devicons,
 # neo-tree all assume a Nerd Font is on hand).
 mkdir -p ~/.local/share/fonts
