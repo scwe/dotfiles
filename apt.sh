@@ -27,6 +27,16 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubc
 sudo apt update
 sudo apt install -y gh
 
+# VSCode (Microsoft's apt repo)
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc \
+  | gpg --dearmor \
+  | sudo tee /etc/apt/keyrings/packages.microsoft.gpg > /dev/null
+sudo chmod go+r /etc/apt/keyrings/packages.microsoft.gpg
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" \
+  | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+sudo apt update
+sudo apt install -y code
+
 # Neovim from the official release tarball — matches the /opt/nvim-linux-x86_64
 # path that .zshrc already adds to PATH. Apt's neovim is usually a major
 # version behind, which my init.lua plugins don't appreciate.
