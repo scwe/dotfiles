@@ -22,15 +22,6 @@ alias python=python3
 alias pip=pip3
 alias vim=nvim
 
-# Google Cloud SDK (PATH + completion)
-if [ -f /opt/google-cloud-sdk/path.zsh.inc ]; then
-  source '/opt/google-cloud-sdk/path.zsh.inc'
-fi
-
-if [ -f /opt/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/opt/google-cloud-sdk/completion.zsh.inc'
-fi
-
 # NVM stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
