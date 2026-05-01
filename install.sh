@@ -1,11 +1,10 @@
 #!/bin/bash
-mkdir -p ./swap ./undo ./backup ./bundle
+set -e
 
-# Remove the auto created zshrc
-rm -rf ~/.zshrc
+# Remove the auto-created zshrc so the symlink below can take its place
+rm -f ~/.zshrc
 
-# link configs
-ln -sf ~/.vim/.vimrc ~/.vimrc
+# Shell + tmux
 ln -sf ~/.vim/.vscodevimrc ~/.vscodevimrc
 ln -sf ~/.vim/.tmux.conf ~/.tmux.conf
 ln -sf ~/.vim/.zshrc ~/.zshrc
@@ -27,11 +26,6 @@ mkdir -p ~/.claude
 ln -sf ~/.vim/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/.vim/claude/settings.json ~/.claude/settings.json
 
-git clone https://github.com/vundlevim/vundle.vim.git ./bundle/Vundle.vim
-vim +PluginInstall +qall
-
-cp -r ~/.vim/bundle/molokai/colors ~/.vim/colors
-
-
-# Install you complete me for Vim
-python3 ./bundle/youcompleteme/install.py
+# Bootstrap neovim plugins (lazy.nvim auto-clones itself on first run, then
+# this headless invocation installs everything from lazy-lock.json).
+nvim --headless "+Lazy! sync" +qa
