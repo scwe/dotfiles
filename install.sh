@@ -27,6 +27,10 @@ ln -sf ~/.vim/git/ignore ~/.config/git/ignore
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
 ln -sf ~/.vim/ssh/config ~/.ssh/config
 
+# Ghostty terminal config
+mkdir -p ~/.config/ghostty
+ln -sf ~/.vim/ghostty/config ~/.config/ghostty/config
+
 # Claude Code (CLAUDE.md and settings.json only — credentials, history,
 # and runtime state stay machine-local)
 mkdir -p ~/.claude

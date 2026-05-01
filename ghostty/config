@@ -1,0 +1,47 @@
+# Ghostty — replaces gnome-terminal as my daily driver.
+# Reload in-place with ctrl+shift+,
+
+# Font (FiraCode Nerd Font is installed via apt.sh)
+font-family = "FiraCode Nerd Font"
+font-size = 12
+
+# Matches the molokai colorscheme in init.lua
+theme = "Molokai"
+
+# More scrollback than the 10k default
+scrollback-limit = 100000
+
+# Block cursor, no blink
+cursor-style = block
+cursor-style-blink = false
+
+# Bit of breathing room around the buffer
+window-padding-x = 8
+window-padding-y = 8
+
+# Don't pop a confirmation modal on window close
+confirm-close-surface = false
+
+# Quit when the last window goes away
+quit-after-last-window-closed = true
+
+# tmux-style chord prefix (ctrl+s). Same muscle memory as my .tmux.conf,
+# minus the things tmux does that ghostty can't (sessions / remote attach).
+
+# Pane navigation
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>l=goto_split:right
+keybind = ctrl+s>j=goto_split:bottom
+keybind = ctrl+s>k=goto_split:top
+
+# Splits — | horizontal, - vertical
+keybind = ctrl+s>|=new_split:right
+keybind = ctrl+s>-=new_split:down
+
+# Close current pane (no confirm)
+keybind = ctrl+s>x=close_surface
+
+# Tabs
+keybind = ctrl+s>c=new_tab
+keybind = ctrl+s>n=next_tab
+keybind = ctrl+s>p=previous_tab
