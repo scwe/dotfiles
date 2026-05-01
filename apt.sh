@@ -95,4 +95,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 rm ~/.zshrc
 mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+
+# Two oh-my-zsh community plugins worth pulling in: autosuggestions
+# (history-aware ghost-text completions) and syntax-highlighting (live
+# command coloring). Both need to be cloned into custom/plugins; the
+# .zshrc plugins=() line already references them.
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+  ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+  ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
 chsh -s /bin/zsh

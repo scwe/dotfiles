@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="steeef"
 
-plugins=(git command-not-found python sudo tmux)
+plugins=(git command-not-found python sudo tmux zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
