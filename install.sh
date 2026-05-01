@@ -21,6 +21,12 @@ ln -sf ~/.vim/.gitconfig ~/.gitconfig
 mkdir -p ~/.config/git
 ln -sf ~/.vim/git/ignore ~/.config/git/ignore
 
+# Claude Code (CLAUDE.md and settings.json only — credentials, history,
+# and runtime state stay machine-local)
+mkdir -p ~/.claude
+ln -sf ~/.vim/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf ~/.vim/claude/settings.json ~/.claude/settings.json
+
 git clone https://github.com/vundlevim/vundle.vim.git ./bundle/Vundle.vim
 vim +PluginInstall +qall
 
